@@ -6,7 +6,7 @@
   </h1>
   <p>Manufacturer: ({{ car.manufacturer.name }}, {{ car.manufacturer.country }})</p>
    <h1>Drivers
-    {%if car in user.cars.all %}
+    {% if car in user.cars.all %}
     <a href="{% url 'taxi:toggle-car' pk=car.id %}" class="btn btn-danger link-to-page">
       Delete me from this car
     </a>

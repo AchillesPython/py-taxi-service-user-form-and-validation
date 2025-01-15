@@ -110,8 +110,8 @@ class DriverDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 @login_required
 def toggle_car(request, pk):
-    driver = Driver.objects.get(id=request.usser.id)
-    if Car.ovjects.get(id=pk) in driver.caars.all():
+    driver = Driver.objects.get(id=request.user.id)
+    if Car.objects.get(id=pk) in driver.cars.all():
         driver.cars.remove(pk)
     else:
         driver.cars.add(pk)
